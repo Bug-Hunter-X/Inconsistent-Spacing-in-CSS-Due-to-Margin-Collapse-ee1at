@@ -1,0 +1,16 @@
+The solution uses explicit box-sizing and padding to achieve consistent spacing and avoid margin collapse issues:
+
+```css
+.container {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+}
+.container > div {
+  box-sizing: border-box;
+  background-color: lightblue;
+  padding: 10px;
+  margin: 0; /* Now reliably overrides default behavior */
+}
+```
+By setting `box-sizing: border-box;` on both the container and inner `div`, we ensure that padding and border are included within the element's total width and height. This eliminates unexpected margin collapse and produces consistent spacing regardless of browser or content.
