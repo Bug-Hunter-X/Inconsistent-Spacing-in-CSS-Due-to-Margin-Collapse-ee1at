@@ -1,0 +1,12 @@
+The following CSS code snippet has a potential issue where the selector `.container` might not behave as expected.  It uses a common mistake of relying on default browser behavior for padding and margin collapsing, which can lead to unexpected spacing inconsistencies across different browsers and content variations.
+
+```css
+.container {
+  padding: 20px;
+  margin: 10px;
+}
+.container > div {
+  background-color: lightblue;
+  margin: 0; /* this margin might not always override default browser behavior */
+}
+```
